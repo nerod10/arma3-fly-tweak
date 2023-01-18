@@ -11,7 +11,6 @@ _turnSpeedacceleration = 0.05;
 _maxTurnSpeed = 180;
 _maxPithcTurnSpeed = 5;
 _yaw = getDir XWing;
-_maxYaw = 360;
 _pitchTruenSpeedFactor = 1;
 _pitch = 0;
 _roll = 0;
@@ -91,8 +90,9 @@ while {alive player} do {
 
 	//yaw
 	_yaw = _yaw + _turnSpeedacceleration * _roll;
-	if (_yaw > _maxYaw) then {_yaw = _maxYaw;};
-	if (_yaw < -_maxYaw) then {_yaw = -_maxYaw;};
+	if (_yaw > 360) then {_yaw = 0;};
+	if (_yaw < 0) then {_yaw = 360;};
+	
 
 	//roll
 	//if the ship is upside down, invert the roll
