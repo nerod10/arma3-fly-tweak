@@ -95,5 +95,5 @@ while {alive player} do {
 	_plane setPosASL (getPosASL _plane vectorAdd [sin _yaw * cos _pitch * _speed, cos _yaw * cos _pitch * _speed, sin _pitch * _speed]);
 
 
-	sleep 0.03333; //30fps
+	sleep 0.03333; // 30fps 
 }
